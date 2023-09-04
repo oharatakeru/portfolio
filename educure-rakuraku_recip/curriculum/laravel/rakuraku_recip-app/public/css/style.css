@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    color: #814F05;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .login-header {
+        background-color: #F5EC96;
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+        font-weight: bold;
+        border-bottom: 1px solid #814F05;
+    }
+
+    p , a {
+        color: #814F05;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    section {
+        margin: 40px 0;
+        padding: 0 5%;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    form {
+        width: 70%;
+        margin: 4% auto 3% auto;
+        border-radius: 16px;
+        border: 1px solid #814F05;
+        padding: 50px;
+        background-color: #F5EC96;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 3px;
+        box-sizing: border-box;
+        border: 1px solid #814F04;
+        padding: 5px 5px;
+    }
+
+    button {
+        width: 30%;
+        border-radius: 10px;
+        border: 1px solid;
+        font-weight: bold;
+        background-color: #F5EC96;
+        cursor: pointer;
+    }
+
+    .button-style {
+        border-radius: 10px;
+        border: 1px solid;
+        font-weight: bold;
+        padding: 0 5%;                                  
+    }
+
+    /* ヘッダー */
+    .header_login {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header_login button {
+        width: auto;
+        border: none;
+    }
+
+    .commit-btn {
+        background-color: white;
+    }
+
+    .header-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .keyword {
+        padding: 0 10%;
+    }
+
+    .grid-2-2 {
+        display: grid;
+        grid-template-columns: 400px 400px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .global_search_keyword {
+        width: auto;
+    }
+
+    /* 管理者ページ */
+    .admin {
+        padding: 0;
+        background-color: white;
+        text-align: center;
+    }
+
+    .admin button {
+        border: none;
+        border-radius: 20px;
+        background-color: white;
+        padding: 5% 0;
+        width: 100%;
+    }
+    .link-admin {
+        text-align: center;
+        margin: 20px;
+    }
+    .link-admin a {
+        padding: 5px 3%;
+        border: 1px solid #814F04;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    /* ユーザー一覧 */
+    table {
+        margin: 0 auto;
+        width: 80%;
+        border-collapse: collapse;
+    }
+
+    th {
+        border: 1px solid #814F04;
+        background-color: #F5EC96;   
+    }
+
+    td {
+        border: 1px solid #814F04;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .form-destroy {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: white;
+    }
+
+    .form-destroy button {
+        border: none;
+        background-color: white;
+        width: auto;
+        font-weight: normal;
+    }
+
+
+
+    .text-danger {
+        color: red;
+    }
+
+    .bk_width {
+        background-color: white;
+    }
+
+    .mt30 {
+        margin-top: 30px;
+    }
