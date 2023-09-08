@@ -5,17 +5,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\ReviewController;
 
 // 管理者ルート
 Route::middleware(['auth', 'is.admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/users', [AdminController::class, 'showUsers'])->name('admin.users.get');
-    Route::post('/admin/users', [AdminController::class, 'showUsers'])->name('admin.users.post');    
+    Route::post('/admin/users', [AdminController::class, 'showUsers'])->name('admin.users.post');   
+    Route::get('/admin/recipes/create', [RecipeController::class, 'create'])->name('admin.recipes.create');
+    Route::get('/admin/recipes/index', [RecipeController::class, 'index'])->name('admin.recipes.index');
+    Route::get('/admin/recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('admin.recipes.edit');
+
 });
 
 Route::middleware(['auth'])->group(function () {
     // ログインが必要なページのルート定義
     Route::get('/top', [TopController::class, 'index']);    
+    Route::get('/recipe/{recipe}', [RecipeController::class, 'show'])->name('recipe.show');
 });
 
 // ログインルート
@@ -42,8 +49,20 @@ Route::get('/admin/users/{user}/edit', [AdminController::class, 'edit'])->name('
 // ユーザーのデータの更新
 Route::put('/admin/users/{user}', [AdminController::class, 'update'])->name('admin.users.update');
 
-
 // 削除
 Route::delete('/admin/users/{user}', [AdminController::class, 'destroy'])->name('admin.users.destroy');
 
+// レシピの保存処理
+Route::post('/admin/recipes/store', [RecipeController::class, 'store'])->name('admin.recipes.store');
 
+// レシピ削除
+Route::delete('/admin/recipes/{recipe}', [RecipeController::class, 'destroy'])->name('admin.recipes.destroy');
+
+// レシピ編集
+Route::put('/admin/recipes/{recipe}', [RecipeController::class, 'update'])->name('admin.recipes.update');
+
+// レシピ検索
+Route::post('/recipe/search', [RecipeController::class, 'search'])->name('recipe.search');
+
+// レビュー
+Route::post('/recipe/{recipe}', [ReviewController::class, 'store'])->name('review.store')->middleware('auth');

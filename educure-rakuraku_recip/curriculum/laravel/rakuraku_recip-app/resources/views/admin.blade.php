@@ -7,8 +7,7 @@
     <section>
         <h1>管理者画面</h1>
         <div>
-            <form class="admin" action="" method="post">
-                @csrf
+            <form class="admin" action="{{route('admin.recipes.index')}}" method="get">
                 <button type="submit">レシピ一覧</button>
             </form>
         </div>
@@ -19,8 +18,7 @@
             </form>
         </div>
         <div>
-            <form class="admin" action="" method="post">
-                @csrf
+            <form class="admin" action="{{route('admin.recipes.create')}}" method="get">
                 <button type="submit">レシピ追加</button>
             </form>
         </div>

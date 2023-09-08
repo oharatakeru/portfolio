@@ -43,6 +43,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 1.5rem;
+        color: #8ca405;
     }
 
     form {
@@ -117,7 +118,7 @@
 
     .grid-2-2 {
         display: grid;
-        grid-template-columns: 400px 400px;
+        grid-template-columns: 40% 40%;
         gap: 20px;
         justify-content: center;
     }
@@ -149,6 +150,15 @@
         border: 1px solid #814F04;
         border-radius: 10px;
         font-weight: bold;
+    }
+
+    form textarea {
+        width: 100%;
+        height: 200px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        border: 1px solid #814F04;
+        padding: 5px 5px;
     }
 
     /* ユーザー一覧 */
@@ -185,7 +195,58 @@
         font-weight: normal;
     }
 
+    /* レシピ追加 */
+    .alert {
+        text-align: center;
+        font-weight: bold;
+    }
 
+    select {
+        width: 100%;
+    }
+
+    /* レシピ一覧 */
+    .recip-item {
+        padding: 2%;
+        border: 1px solid #814F04;
+    }
+    .recip-title {
+        font-weight: bold;
+        color: #8ca405;
+    }
+    .recip-description p{
+        font-size: 1rem;
+    }
+    .recip-show {
+        padding: 0 10%;
+    }
+    .recip-flex {
+        display: flex;
+        align-items: center;
+    }
+    .recip-flex img {
+        width: 50%;
+    }
+    .recip-flex p {
+        padding: 0 0 0 5%;
+    }
+
+    /* レビュー */
+    .reviews {
+        padding: 0 10%;
+    }
+    .reviews p {
+        font-size: 1rem;
+    }
+    .reviews h2 {
+        border-top: 1px solid;
+        padding-top: 3%;
+    }
+
+
+    h2 { 
+        text-align: center;
+    }
 
     .text-danger {
         color: red;
@@ -194,7 +255,9 @@
     .bk_width {
         background-color: white;
     }
-
+    .mt20 {
+        margin-top: 20px;
+    }
     .mt30 {
         margin-top: 30px;
     }
