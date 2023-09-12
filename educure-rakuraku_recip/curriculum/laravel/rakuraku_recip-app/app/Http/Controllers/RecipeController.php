@@ -64,12 +64,20 @@ class RecipeController extends Controller
     }
     
     public function index() {
-        $recipes = Recipe::all(['id','title', 'ingredients', 'quantity', 'cooking_time']);
+        $recipes = Recipe::orderBy('created_at', 'desc')->get(['id','title', 'ingredients', 'quantity', 'cooking_time']);
         return view('admin.recipes.index', ['recipes' => $recipes]);
-    }
+    }    
 
     public function edit(Recipe $recipe) {
-            return view('admin.recipes.editrecip', ['recipe' => $recipe]);
+            $reviews = $recipe->reviews;
+            return view('admin.recipes.editrecip', compact( 'recipe', 'reviews'));
+    }
+
+    public function show($id)
+    {
+        $recipe = Recipe::findOrFail($id);
+        $reviews = $recipe->reviews;
+        return view('recipe.show', compact('recipe' , 'reviews'));
     }
     
     public function update(Request $request, $id)
@@ -116,17 +124,9 @@ class RecipeController extends Controller
         return redirect()->route('admin.recipes.index')->with('success', 'レシピが更新されました！');
     }
 
-
     public function destroy(Recipe $recipe) {
         $recipe->delete();
         return redirect()->route('admin.recipes.index')->with('success', 'レシピを削除しました');
-    }
-    
-    public function show($id)
-    {
-        $recipe = Recipe::findOrFail($id);
-        $reviews = $recipe->reviews;
-        return view('recipe.show', compact('recipe' , 'reviews'));
     }
 
     public function search(Request $request)

@@ -33,17 +33,26 @@
     <div class="review-form mt30">
         <form action="{{ route('review.store', ['recipe' => $recipe->id]) }}" method="post">
         <h2>レビューを書く</h2>
+                @error('recipe_id')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             @csrf
             <input type="hidden" name="recipe_id" value="{{ $recipe->id }}">
             <div class="rating-input mt30">
                 <label for="rating">評価（星1~5）:</label>
+                @error('rating')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <input type="number" name="rating" min="1" max="5" required>
             </div>
             <div class="comment-input mt10">
                 <label for="comment">コメント:</label>
+                @error('comment')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <textarea name="comment" rows="4" cols="50" maxlength="512"></textarea>
             </div>
-            <input type="submit" value="レビューを送信" class="mt10">
+            <input type="submit" value="レビューを送信" class="mt10 edit-buttom">
         </form>
     </div>
 @endsection

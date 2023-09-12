@@ -36,5 +36,8 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="link-admin">
+            <a href="{{ route('admin.dashboard') }}">管理者画面</a>
+        </div>
     </section>
 @endsection

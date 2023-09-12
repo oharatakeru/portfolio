@@ -70,6 +70,7 @@
         box-sizing: border-box;
         border: 1px solid #814F04;
         padding: 5px 5px;
+        background-color: white;
     }
 
     button {
@@ -242,7 +243,29 @@
         border-top: 1px solid;
         padding-top: 3%;
     }
-
+    .comment-input input {
+        cursor: pointer;
+        background-color: aquamarine;
+    }
+    .delet-form {
+        margin: 0 auto;
+        background-color: white;
+        padding: 0;
+        border: none;
+        text-align: center;
+    }
+    .delet-form button {
+        background-color: crimson;
+        color: white;
+        border: 1px solid;
+    }
+    .delet-review {
+        border-top: 1px solid;
+        margin-top: 3%;
+    }
+    .edit-buttom {
+        cursor: pointer;
+    }
 
     h2 { 
         text-align: center;
@@ -255,9 +278,96 @@
     .bk_width {
         background-color: white;
     }
+    .mt10 {
+        margin-top: 10px;
+    }
     .mt20 {
         margin-top: 20px;
     }
     .mt30 {
         margin-top: 30px;
+    }
+    .pc-none {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        form {
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        button {
+            width: 50%;
+        }
+        .recip {
+            margin-top: 30px;
+        }
+        .review-form {
+            padding: 0 3%;
+        }
+        .grid-2-2 {
+            display: block;
+        }
+        .recip-item {
+            margin-top: 30px;
+        }
+        .recip-flex {
+            display: block;
+        }
+        .recip-flex img {
+            width: 100%;
+        }
+        .recip-flex p {
+            padding: 0;
+        }
+        .recip-show {
+            padding: 0 3%;
+        }
+        .reviews {
+            padding: 0 3%;
+        }
+        .admin-item {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+        }
+        section {
+            padding: 0 3%;
+        }
+        .edit-recip img {
+            width: 100%;
+        }
+        .header-flex {
+            display: block;
+            padding: 10px 1%;
+        }
+        .header-sp {
+            display: flex;
+            justify-content: space-between;
+        }
+        .header-sp p {
+            width: 100%;
+            text-align: left;
+        }
+        .header-form-sp {
+            text-align: right;
+        }
+        .keyword {
+            padding: 0;
+        }
+        .header-keyword {
+            display: flex;
+        }
+        #keyword {
+            width: 70%;
+        }
+        #submit_button {
+            width: 50%;
+            margin-left: 5%;
+        }
+        .sp-none {
+            display: none;
+        }
     }

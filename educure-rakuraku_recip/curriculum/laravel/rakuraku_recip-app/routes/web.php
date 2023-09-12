@@ -16,13 +16,16 @@ Route::middleware(['auth', 'is.admin'])->group(function () {
     Route::get('/admin/recipes/create', [RecipeController::class, 'create'])->name('admin.recipes.create');
     Route::get('/admin/recipes/index', [RecipeController::class, 'index'])->name('admin.recipes.index');
     Route::get('/admin/recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('admin.recipes.edit');
-
 });
 
 Route::middleware(['auth'])->group(function () {
     // ログインが必要なページのルート定義
     Route::get('/top', [TopController::class, 'index']);    
     Route::get('/recipe/{recipe}', [RecipeController::class, 'show'])->name('recipe.show');
+    // ユーザー編集画面の表示
+    Route::get('/admin/users/{user}/edit', [AdminController::class, 'edit'])->name('admin.users.edit');
+    // トップページルート
+    Route::get('/top', [TopController::class, 'index'])->name('top');
 });
 
 // ログインルート
@@ -36,15 +39,10 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-// トップページルート
-Route::get('/top', [TopController::class, 'index'])->name('top');
 
 // 新規登録ルート
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
-
-// ユーザー編集画面の表示
-Route::get('/admin/users/{user}/edit', [AdminController::class, 'edit'])->name('admin.users.edit');
 
 // ユーザーのデータの更新
 Route::put('/admin/users/{user}', [AdminController::class, 'update'])->name('admin.users.update');
@@ -66,3 +64,5 @@ Route::post('/recipe/search', [RecipeController::class, 'search'])->name('recipe
 
 // レビュー
 Route::post('/recipe/{recipe}', [ReviewController::class, 'store'])->name('review.store')->middleware('auth');
+
+Route::resource('reviews', ReviewController::class)->only(['edit', 'update', 'destroy']);
