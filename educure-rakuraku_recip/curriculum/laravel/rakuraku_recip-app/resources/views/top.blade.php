@@ -3,7 +3,6 @@
 @section('title', 'らくらくレシピ')
 
 @section('content')
-
     <section>
         <h1>レシピ一覧</h1>
         <div class="grid-2-2 mt30">
@@ -30,6 +29,4 @@
             @endforeach
         </div>
     </section>
-
 @endsection
-    

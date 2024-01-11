@@ -7,6 +7,7 @@ use App\Models\Recipe;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class RecipeController extends Controller
 {
@@ -66,7 +67,7 @@ class RecipeController extends Controller
     public function index() {
         $recipes = Recipe::orderBy('created_at', 'desc')->get(['id','title', 'ingredients', 'quantity', 'cooking_time']);
         return view('admin.recipes.index', ['recipes' => $recipes]);
-    }    
+    }
 
     public function edit(Recipe $recipe) {
             $reviews = $recipe->reviews;
